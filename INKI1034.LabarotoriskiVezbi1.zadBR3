@@ -1,0 +1,58 @@
+//Stefan Najdoski INKI1034
+#include <iostream>
+#include <string>
+using namespace std;
+
+enum Month {Januari,Fevruari,Mart,April,Maj,Juni,Juli,Avgust,Septemvri,Oktomvri,Noemvri,Dekemvri};
+
+int main() {
+    Month month;
+    int monthNum;
+
+    // Vnesete broj na mesec
+    string monthNames[] = {"Januari", "Fevruari", "Mart", "April", "Maj", "Juni", "Juli", "Avgust", "Septemvri", "Oktomvri", "Noemvri", "Dekemvri"};
+
+    // Gi pecatete site meseci
+    for (month = Januari; month <= Dekemvri; month = static_cast<Month>(month + 1)) {
+        cout << month + 1 << ": " << monthNames[month] << endl;
+    }
+
+    // Da go dobieme informacii za eden mesec
+    cout << "Vnesi broj na mesec (1-12): ";
+    cin >> monthNum;
+    month = static_cast<Month>(monthNum - 1);
+
+    // Odredete go vremeto od godinata i mesecot koristejki switch
+    string timeOfYear;
+    int consecutiveMonth;
+
+    switch (month) {
+        case Mart:
+        case April:
+        case Maj:
+            timeOfYear = "Prolet";
+            consecutiveMonth = month - Mart + 1;
+            break;
+        case Juni:
+        case Juli:
+        case Avgust:
+            timeOfYear = "Leto";
+            consecutiveMonth = month - Juni + 1;
+            break;
+        case Septemvri:
+        case Oktomvri:
+        case Noemvri:
+            timeOfYear = "Esen";
+            consecutiveMonth = month - Septemvri + 1;
+            break;
+        default:
+            timeOfYear = "Zima";
+            consecutiveMonth = month + 1;
+    }
+
+    // Go pecatete godisnoto vreme i tocniot  mesec
+    cout << monthNames[month] << " e vo  " << timeOfYear << " i e " << consecutiveMonth << " mesec/i vlezen vo sezonata." << endl;
+
+    return 0;
+}
+// Najprvo gi pisuvame site meseci vo niza gi pecatime od 1 do 12 da se vnesi broj i so switch case primer ako e Mart znaci e prolet i se pecati Mart e vo Prolet i e prv mesec vo sezonata
