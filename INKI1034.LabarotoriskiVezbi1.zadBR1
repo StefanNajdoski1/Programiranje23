@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+//преуредите ги елементите за да добиеш вистински стожерен индекс
+int partition(int arr[], int low, int high, int pivot){
+	int pindex = low;
+    
+// Преминете низ низата од ниско до високо
+    for(int i=low;i<=high;i++) {   
+        
+// Ако тековниот елемент е помал од стожерниот елемент
+        if(arr[i]<=pivot) {
+
+// Заменете го елементот pindex со тековниот елемент.
+            swap(arr[pindex],arr[i]);
+// Зголемете го покажувачот.
+            pindex++;
+        }
+    }
+    
+   pindex--;
+    
+	return pindex;
+}
+
+// Низата ја делиме на две поднизи наоколу
+
+// стожерот и рекурзивно повикајте ги одделно.
+void quickSort(int arr[], int low, int high){
+	if(low < high) {
+	    int pivot = arr[high];
+        
+//Преуреди и добиј го вистинскиот индекс на сортирање
+
+	    int pindex = partition(arr, low, high, pivot);
+	
+// реши за левата и десната подниза
+            quickSort(arr, low, pindex-1);
+            quickSort(arr, pindex+1, high);
+	}
+}
+
+int main()
+{
+	
+    int arr[24] = {(int)'S', (int)'t', (int)'e', (int)'f', (int)'a', (int)'n', (int)' ', (int)'N', (int)'a', (int)'j', (int)'d', (int)'o', (int)'s', (int)'k', (int)'i', (int)' ',
+                 (int)'I', (int)'N', (int)'K', (int)'I', (int)'1', (int)'0', (int)'3', (int)'4'};
+                 //Името, Презимето и индексот во аски броеви
+	int n=24;
+    
+	quickSort(arr, 0 , n-1);
+    
+	cout<<"Низата подредена со брзо сортирање ";
+	for( int i = 0 ; i < n; i++){
+		cout<< arr[i]<<" ";
+	}
+	
+    return 0;
+}
