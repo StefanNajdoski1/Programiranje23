@@ -1,0 +1,57 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+const int DECK_SIZE = 54; 
+const int SUIT_SIZE = 13;
+
+string suits[4] = {"Срце", "Диамант", "Баклава", "Детелинка"};
+string ranks[SUIT_SIZE] = {"1/11", "2", "3", "4", "5", "6", "7", "8", "9", "10", "џандар", "Крлаица", "Крал"};
+
+void shuffleDeck(string deck[], int size) {
+    for (int i = 0; i < size; i++) {
+        int j = rand() % size;
+        string temp = deck[i];
+        deck[i] = deck[j];
+        deck[j] = temp;
+    }
+}
+
+int main() {
+    string deck[DECK_SIZE];
+    int index = 0;
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < SUIT_SIZE; j++) {
+            deck[index] = ranks[j] + "  " + suits[i];
+            index++;
+        }
+    }
+
+    deck[52] = "Џокер 1";
+    deck[53] = "Џокер 2";
+
+    srand(time(NULL)); 
+
+    string originalDeck[DECK_SIZE];
+    for (int i = 0; i < DECK_SIZE; i++) {
+        originalDeck[i] = deck[i];
+    }
+
+    shuffleDeck(deck, DECK_SIZE);
+
+    cout << "Оригинален шпил" << endl;
+    for (int i = 0; i < DECK_SIZE; i++) {
+        cout << originalDeck[i] << endl;
+    }
+
+    cout << endl << "Измешан шпил:" << endl;
+    for (int i = 0; i < DECK_SIZE; i++) {
+        cout << deck[i] << endl;
+    }
+
+    return 0;
+}
