@@ -1,0 +1,12 @@
+1.Kolku planeti ima vo nasiot solaren sistem? a. 5, b.9, c.8
+2.Kolku drzavi ima na kontinentot Evropa? : a. 54, b.44, c. 64
+3.Kolku drzavi ima na balkanskiot poluostrov a. 8, b.11, c. 16
+4.Koj e glaven grad na Ukraina : a. Kiev, b.Warsava, c. Minsk
+5.Glaven grad na Francija : a.Paris, b.London, c.Madrid
+6.Najgolema drzava vo evropa : a. Ukraina, b.Spanija, c. Rusija
+7.Koja drzava ima najgolema populacija vo svetot : a. India, b.Kina, c.Rusija
+8.Najmala drzava vo svetot : a.Vatikan, b.Lihtenstajn, c.San Marino
+9.Najdlaboko ezero vo svetot : a.Ohridsko ,b.Bajkalsko ,c. Gorno
+10.Koj e najgolem okean vo svetot? a.Atlanski ,b.Tihi ,c.Indiski
+11.Koj e glaven grad na Ukraina : a. Kiev, b.Warsava, c. Minsk
+12.Glaven grad na Francija : a.Paris, b.London, c.Madrid
