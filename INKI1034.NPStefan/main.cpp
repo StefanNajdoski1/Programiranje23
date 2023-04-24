@@ -30,9 +30,9 @@ inline bool check (const std::string& name) {
     }
 }
 
-char tocniPrvi[4]={'a', 'a', 'a', 'c'};
-char tocniVtori[4]={'c', 'b', 'b', 'd'};
-char tocniTreti[4][2]={{'b', 'c'}, {'a', 'b'}, {'b', 'e'}, {'b', 'c'}};
+char tocniPrvi[4]={'c', 'a', 'a', 'c'};
+char tocniVtori[4]={'c', 'b', 'b', 'a'};
+char tocniTreti[4][2]={{'b', 'c'}, {'a', 'b'}, {'b', 'a'}, {'b', 'c'}};
 
 
   // Funkcija koja se koristi za primanje na vlez
